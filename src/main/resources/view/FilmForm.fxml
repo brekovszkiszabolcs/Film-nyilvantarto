@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15.0" style="-fx-background-color: #222222; -fx-padding: 30;"
+      stylesheets="@../styles/dark-theme.css"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.FilmFormController" prefWidth="480">
+
+    <Label text="Film adatlap" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+        <VBox.margin>
+            <Insets bottom="10.0" />
+        </VBox.margin>
+    </Label>
+
+    <VBox spacing="5">
+        <Label text="Cím *" textFill="#cccccc" />
+        <TextField fx:id="titleField" promptText="Pl.: A Keresztapa" />
+    </VBox>
+
+    <!-- ÚJ: Dátum kiválasztó legördülő menük -->
+    <VBox spacing="5">
+        <Label text="Megjelenés ideje *" textFill="#cccccc" />
+        <HBox spacing="10">
+            <ComboBox fx:id="yearComboBox" prefWidth="120.0" promptText="Év" />
+            <ComboBox fx:id="monthComboBox" prefWidth="100.0" promptText="Hónap" />
+            <ComboBox fx:id="dayComboBox" prefWidth="100.0" promptText="Nap" />
+        </HBox>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Műfaj *" textFill="#cccccc" />
+        <ComboBox fx:id="genreComboBox" prefWidth="420.0" promptText="Válassz műfajt..." />
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Rövid leírás (1 mondatban)" textFill="#cccccc" />
+        <TextArea fx:id="descriptionArea" promptText="Pl.: Egy maffiacsalád története..." prefRowCount="3" wrapText="true" />
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="Kép (Poszter)" textFill="#cccccc" />
+        <HBox spacing="10.0" alignment="CENTER_LEFT">
+            <children>
+                <TextField fx:id="imageUrlField" promptText="Kép útvonala..." HBox.hgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#handleBrowseImage" text="Tallózás..."
+                        style="-fx-background-color: #333333; -fx-text-fill: white; -fx-cursor: hand; -fx-padding: 6 12;" />
+            </children>
+        </HBox>
+    </VBox>
+
+    <HBox spacing="15.0" alignment="CENTER_RIGHT" style="-fx-padding: 20 0 0 0;">
+        <Button fx:id="deleteButton" text="Törlés" onAction="#handleDelete" visible="false" managed="false"
+                style="-fx-background-color: #cc0000; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 5 15;" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Button text="Mégse" onAction="#handleCancel" style="-fx-background-color: transparent; -fx-text-fill: #999; -fx-border-color: #999; -fx-cursor: hand;" />
+        <Button text="Mentés" onAction="#handleSave" style="-fx-background-color: #ff6600; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand; -fx-padding: 5 20;" />
+    </HBox>
+</VBox>
