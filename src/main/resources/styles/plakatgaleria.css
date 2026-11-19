@@ -1,0 +1,19 @@
+.plakatgaleria, .plakatgaleria .scroll-pane,
+.plakatgaleria .scroll-pane > .viewport {
+    -fx-background-color: #f5f2ea;
+}
+.plakatgaleria .label { -fx-text-fill: #233840; }
+.plakatgaleria .galeria-cim {
+    -fx-font-family: "Georgia"; -fx-font-size: 30px; -fx-font-weight: bold;
+}
+.plakatgaleria .film-kartya {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(29,44,49,0.15), 7, 0, 0, 2);
+}
+.plakatgaleria .film-cim { -fx-font-size: 16px; -fx-font-weight: bold; }
+.plakatgaleria .button {
+    -fx-background-color: #263e45; -fx-text-fill: white;
+    -fx-background-radius: 4; -fx-padding: 7 12; -fx-cursor: hand;
+}
+.plakatgaleria .button:hover { -fx-background-color: #405d61; }
+.plakatgaleria .button:focused { -fx-border-color: #c88649; -fx-border-radius: 4; }
